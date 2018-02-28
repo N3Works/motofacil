@@ -9,6 +9,6 @@ Apois dar o clone do projeto:
    "winpty docker exec -it CONTAINER_COM_CODIGO_FONTE bash"
 6º Agora dentro da container, valide se está os fontes dentro, pode acontecer da imagem não criar os fontes, ai terá que ajustar a conteiner.
 7º Verifique se dentro do código fonte existe o arquivo, artisan e composer.phar. (as vezes pode não estar sendo versionado no git)
-8º Caso esteja tudo ok, executar o comando composer install para pegar atualizar/criar a pasta "vendor" esse comando pode demorar alguns minutos.
+8º Caso esteja tudo ok, executar o comando "composer install" para pegar atualizar/criar a pasta "vendor" esse comando pode demorar alguns minutos.
 9° Ultimo passo é executar o comando "artisan migrate" para adicionar as tabelas e seeds a sua aplicação.
 10º A principio está tudo certo agora, teste em sua url.
