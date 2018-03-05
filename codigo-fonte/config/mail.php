@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'adesaotermo@gmail.com',
-        'name' => 'Termo Adesão',
+        'address' => 'thiago.amarante.farias@gmail.com',
+        'name' => 'Thiago Moto Fácil',
     ],
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'username' => 'adesaotermo@gmail.com',
+    'username' => 'thiago.amarante.farias@gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
     |
     */
 
-    'password' => 'termoadesao',
+    'password' => 'secret007123',
 
     /*
     |--------------------------------------------------------------------------

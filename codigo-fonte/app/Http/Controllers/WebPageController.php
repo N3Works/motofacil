@@ -6,7 +6,9 @@ namespace App\Http\Controllers;
 //Base do controlador
 use App\Http\Controllers\Controller; //Base do controlador
 use Illuminate\Http\Request; //Controle de dados por request
-
+use App\Models\Motos;
+use App\Http\Requests\SolicitacaoPropostaFormRequest;
+use Mail;
 use Response;
 
 /**
@@ -22,5 +24,124 @@ class WebPageController extends Controller {
      */
     public function index(Request $request) {
         return view('webPage.index');
+    }
+    
+    /**
+     * Página De busca das motos da WebPage
+     * @param Request $request dados do formulário
+     * @return Response
+     */
+    public function buscarMotos(Request $request) {
+        $model = new Motos();
+        $model->fill($request->all());
+        
+        return view('webPage.buscarMotos', [
+            'model' => $model,
+            'motos' => $model->consultar(),
+        ]);
+    }
+    
+    /**
+     * Tela de detalhe da moto
+     * @param integer $id Indentificador da moto
+     * @return Response
+     */
+    public function show($id) {
+        
+        if (isset($id) && $id) {
+            $model = new Motos();
+            $moto = $model->find($id);
+           
+            return view('webPage.show', [
+                'moto' => $moto,
+            ]);
+        } else {
+            redirect(url('/index'));
+        }
+    }
+    
+    /**
+     * Página De busca das motos da WebPage
+     * @param Request $request dados do formulário
+     * @return Response
+     */
+    public function solicitarProposta(Request $request) {
+        
+        $dados = $request->all();
+        $proposta = null;
+        
+        
+        if (isset($dados['proposta'])) {
+            $proposta = $dados['proposta'];
+            
+            if ($proposta == 'aposentados') {
+                $proposta = array();
+                $proposta['titulo'] = 'Empréstimo para aposentados em 72x';
+                $proposta['valor'] = 'aposentados';
+            } else {
+                $moto = Motos::find($dados['proposta']);
+                if (empty($moto)) {
+                    $proposta = null;
+                } else {
+                    $proposta = array();
+                    $proposta['titulo'] = $moto->modelo;
+                    $proposta['valor'] = $moto->id; 
+                }
+            }
+        }
+        
+        return view('webPage.solicitarProposta', [
+            'proposta' => $proposta,
+        ]);
+    }
+    
+    /**
+     * Página De busca das motos da WebPage
+     * @param Request $request dados do formulário
+     * @return Response
+     */
+    public function enviarProposta(SolicitacaoPropostaFormRequest $request) {
+        
+        $dados = $request->all();
+        $proposta = null;
+        
+        
+        if (isset($dados['proposta'])) {
+            $proposta = $dados['proposta'];
+            
+            if ($proposta == 'aposentados') {
+                $proposta = array();
+                $proposta['titulo'] = 'Empréstimo para aposentados em 72x';
+                $proposta['valor'] = 'aposentados';
+            } else {
+                $moto = Motos::find($dados['proposta']);
+                if (empty($moto)) {
+                    $proposta = null;
+                } else {
+                    $proposta = array();
+                    $proposta['titulo'] = $moto->modelo;
+                    $proposta['valor'] = $moto->id; 
+                }
+            }
+        }
+        
+        if ($request->isMethod('post')) {;
+            $dados = $request->all();
+            $subject = 'Solicitação de Proposta';
+            $dados['tipo_proposta'] = $proposta['titulo'];
+            if (!isset($dados['email'])) {
+                $dados['email'] = '';
+            }
+            Mail::send('webPage.mail.proposta' , $dados, function ($message) use ($subject) {
+                $config = config('mail'); // get config de email
+                $message->from($config['from']['address'], $config['from']['name']);
+                $message->to($config['from']['address'], $config['from']['name']);
+                $message->subject($subject);
+            });
+            
+            $this->setMessage('Enviado com sucesso!', 'success');
+        }
+        
+        return redirect(url('solicitar'));
     }
 }

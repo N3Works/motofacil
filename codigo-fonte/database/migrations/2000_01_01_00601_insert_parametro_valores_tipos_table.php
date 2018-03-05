@@ -12,18 +12,6 @@ class InsertParametroValoresTiposTable extends Migration {
                 'parametro_id' => 4,
             ],
             [
-                'id' => '2', 
-                'value' => 'PORTAL_GOLD',
-                'header' => 'Portal Siconv - Gold',
-                'parametro_id' => 4,
-            ],
-            [
-                'id' => '3', 
-                'value' => 'PORTAL_AZUL',
-                'header' => 'Portal Siconv - Azul',
-                'parametro_id' => 4,
-            ],
-            [
                 'id' => '4', 
                 'value' => '10',
                 'header' => '10',

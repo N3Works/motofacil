@@ -8,13 +8,15 @@
     <body id="page-top">
 
         @include('layoutWebPage.header')
-
+        
+        <header class="masthead"></header>
+        
         @yield('conteudo')
 
         <!-- Footer -->
         <footer>
             <div class="container text-center footerText">
-                <p>{!! app('AppConfig')->getParam('RODAPE_TEXTO_PROJETO') !!}</p>
+                <a href="{{ url('solicitar?proposta=aposentados') }}">{!! app('AppConfig')->getParam('RODAPE_TEXTO_PROJETO') !!}</a>
             </div>
         </footer>
 

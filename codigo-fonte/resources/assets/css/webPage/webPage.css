@@ -1,0 +1,146 @@
+@media (min-width: 767px) {
+    .content-section {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content-section {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+/*.content-section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}*/
+
+.brand-heading {
+    font-size: 50px !important;
+}
+
+.footerText {
+    color: white !important;
+}
+
+/*.intro-text {
+}*/
+
+.form-body {
+    text-align: left;
+}
+
+.container-branco {
+    background-color: white;
+    border-radius: 8px;
+    min-height: 120px;
+    padding: 20px;
+    color: black;
+    text-align: left;
+}
+
+.text-resultado {
+    color: gray;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 50px;
+}
+
+.border-gallery {
+    border: 1px solid #E7ECEF;
+    margin: 5px;
+    padding: 13px;
+    
+}
+
+.container-branco h5{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    color: #121212;
+    margin-top: 10px;
+    font-size: 16px;
+    text-transform: none;
+    margin-bottom: 0px;
+}
+
+.div-painel {
+    padding-bottom: 10px;
+}
+
+.container-branco h4{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    color: #121212;
+    font-size: 14px;
+    text-transform: none;
+    
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+.absolute-container {
+    padding-top: 150px;
+    width: 100%;
+}
+
+.masthead {
+    opacity: 0.5;
+    position: fixed;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    position: relative;
+    bottom: 0px;
+    background-color: black;
+    height: 37px;
+    text-align: center;
+    width: 100%;
+    padding: 5px 0px !important;
+}
+
+.container-buscarMotos {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+.request {
+    color: red;
+}
+
+.form-text-open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+}
+
+.alert-danger {
+    background-color: #f2dede;
+}

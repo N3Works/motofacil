@@ -23,3 +23,9 @@ Route::any('/users/recuperarSenha', 'UsersController@recuperarSenha');
 Route::get('/manual', function () {
     return view('manual.index');
 });
+
+Route::any('/solicitar', 'WebPageController@solicitarProposta');
+Route::any('/enviar', 'WebPageController@enviarProposta');
+Route::any('/index', 'WebPageController@index');
+Route::any('/show/{id}', 'WebPageController@show');
+Route::any('/buscar', 'WebPageController@buscarMotos');
