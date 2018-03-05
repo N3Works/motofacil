@@ -77,7 +77,7 @@
                                         <hr>
                                         <div class="row div-painel">
                                             <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 text-center">
-                                                <img src="{{ asset('storage/'.str_replace('public', '', $moto->anexos->filename) ) }}" class="image-moto">
+                                                <img src="{{ asset('storage/'.str_replace('public/', '', $moto->anexos->filename) ) }}" class="image-moto">
                                             </div>
                                             <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
                                                 <h4><i class="fa fa-calendar" title="Ano"></i> {{ $moto->ano }}</h4><br>

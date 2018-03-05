@@ -17,7 +17,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <img src="{{ asset('storage/'.str_replace('public', '', $moto->anexos->filename) ) }}" class="image-moto">
+                                <img src="{{ asset('storage/'.str_replace('public/', '', $moto->anexos->filename) ) }}" class="image-moto">
                             </div>
                             <div class="col-md-6">
                                 <div class="row">
