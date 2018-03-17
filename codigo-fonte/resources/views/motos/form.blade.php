@@ -30,6 +30,7 @@
                         
                         <input type="hidden" name="id" class="model_id" value="{{ $model->id }}">
                         <input type="hidden" name="anexado_arquivo" class="anexado_arquivo" value="false">
+                        <input type="hidden" class="anexo_obrigatorio" value="{{$anexo_obrigatorio}}">
                         
                         <div class="col-md-12">
                             <fieldset>

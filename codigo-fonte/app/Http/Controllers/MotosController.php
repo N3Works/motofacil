@@ -82,17 +82,20 @@ class MotosController extends Controller {
             $this->authorize('MOTOS_EDITAR', 'PermissaoPolicy');
             $model = $this->model->find($id);
             $model->formatAttributes('get');
+            $anexo_obrigatorio = false;
         
             if (!$model) {
                 $this->setMessage('O Moto não foi encontrado', 'danger');
                 return redirect(url('Motos/index'));
             }
         } else {
+            $anexo_obrigatorio = true;
             $this->authorize('MOTOS_CADASTRAR', 'PermissaoPolicy');
         }
         
         return view('motos.form', array(
             'model' => $model,
+            'anexo_obrigatorio' => $anexo_obrigatorio,
         ));
     }
     
