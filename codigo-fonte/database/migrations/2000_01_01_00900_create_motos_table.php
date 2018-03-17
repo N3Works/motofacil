@@ -16,8 +16,7 @@ class CreateMotosTable extends Migration {
             $table->increments('id')->comment('ID');
             $table->string('modelo', 100)->comment('Modelo');
             $table->string('marca', 100)->comment('Marca');
-            $table->date('data_ini')->comment('Data Inicial');
-            $table->date('data_fim')->comment('Data Final');;
+            $table->integer('ano')->comment('Ano');
             $table->string('estilo', 100)->nullable()->comment('Estilo');
             $table->integer('cilindrada')->nullable()->comment('Cilindrada');
             $table->integer('potencia')->nullable()->comment('potencia');
