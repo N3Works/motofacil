@@ -34,11 +34,31 @@ class WebPageController extends Controller {
     public function buscarMotos(Request $request) {
         $model = new Motos();
         $model->fill($request->all());
+        $anos = [];
+        $modelos = [];
+        
+        if ($model->marca) {
+            $marcaFiltro = Motos::where('marca', $model->marca);
+            $modelos = $marcaFiltro->pluck('modelo', 'modelo');
+            $anos = $marcaFiltro->pluck('ano', 'ano');
+        }
         
         return view('webPage.buscarMotos', [
             'model' => $model,
             'motos' => $model->consultar(),
+            'marcas' => $model->pluck('marca', 'marca'),
+            'anos' => $anos,
+            'modelos' => $modelos,
         ]);
+    }
+    
+    /**
+     * Página De busca das motos da WebPage
+     * @param Request $request dados do formulário
+     * @return Response
+     */
+    public function quemSomos() {
+        return view('webPage.quemSomos');
     }
     
     /**
@@ -120,17 +140,21 @@ class WebPageController extends Controller {
                 } else {
                     $proposta = array();
                     $proposta['titulo'] = $moto->modelo;
-                    $proposta['valor'] = $moto->id; 
+                    $proposta['valor'] = $moto->id;
+                    $motoDetalhe = $moto->toArray();
                 }
             }
         }
         
-        if ($request->isMethod('post')) {;
+        if ($request->isMethod('post')) {
             $dados = $request->all();
             $subject = 'Solicitação de Proposta';
             $dados['tipo_proposta'] = $proposta['titulo'];
             if (!isset($dados['email'])) {
                 $dados['email'] = '';
+            }
+            if ($motoDetalhe) {
+                $dados['motoDetalhe'] = $motoDetalhe;
             }
             Mail::send('webPage.mail.proposta' , $dados, function ($message) use ($subject) {
                 $config = config('mail'); // get config de email
@@ -143,5 +167,20 @@ class WebPageController extends Controller {
         }
         
         return redirect(url('solicitar'));
+    }
+    
+    /**
+     * Busca os dados restantes para o filtro da moto
+     * @param string $marca
+     */
+    public function buscarModeloEAno($marca) {
+        $marcaFiltro = Motos::where('marca', $marca);
+        $modelos = $marcaFiltro->pluck('modelo', 'modelo');
+        $anos = $marcaFiltro->pluck('ano', 'ano');
+        
+        return Response::json(array(
+            'anos' => $anos,
+            'modelos' => $modelos,
+        ));
     }
 }

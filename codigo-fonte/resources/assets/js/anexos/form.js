@@ -1,5 +1,4 @@
 $(document).ready(function() {
-   $('')
    $(document).on('click', '.salvarForm', function() {
        if ($('.anexado_arquivo').val() != 'true') {
            appUtil.createFlashMesseger('Campo anexo é obrigatório.', false);

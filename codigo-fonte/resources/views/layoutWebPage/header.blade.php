@@ -14,6 +14,9 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ url('solicitar') }}">Solicitar Proposta</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ url('quemSomos') }}">Quem Somos</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -13,6 +13,9 @@
 <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="{{ asset('template/global/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" >        
+<link href="{{ asset('template/global/plugins/select2/css/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" > 
+
 
 <!-- Custom styles for this template -->
 {!!Html::style('resources/assets/css/webPage/grayscale.min.css')!!}

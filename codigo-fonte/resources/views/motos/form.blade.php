@@ -29,6 +29,7 @@
                     <div class="form-body">
                         
                         <input type="hidden" name="id" class="model_id" value="{{ $model->id }}">
+                        <input type="hidden" name="anexado_arquivo" class="anexado_arquivo" value="false">
                         
                         <div class="col-md-12">
                             <fieldset>
@@ -105,9 +106,26 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="form-body {{ $errors->first("anexo_id", "has-error") }}">
-                                            <label class="control-label">{{ $model->labels['anexo_id'] }}  <span class="request">*</span>:</label>
-                                            {{ Form::select('anexo_id', \App\Models\Anexos::getModel()->consultar()->pluck('nome_fantasia', 'id')->prepend('Selecione', '')->toArray(), $model->anexo_id, ['data-required' => 1,'aria-required' => 'true' ,'class' => 'form-control select2']) }}
+                                        <label class="control-label">Anexar</label>
+                                        <div class="col-md-12" style="height: 12%;">
+                                            <span class="btn btn-success fileinput-button">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                                <span>Anexar</span>
+                                                <input id="fileupload" type="file" name="attach">
+                                            </span>
+
+                                            <div class="message-limit" style="display: none">
+                                                <span class="request" id="mensagem"> </span>
+                                            </div>
+
+                                            <span class="label label-sm label-default popovers" data-html="true" data-container="body" data-trigger="hover" data-placement="bottom" data-content="Tamanho máximo de cada arquivo: 300MB<b></b>" data-original-title="" title="">
+                                                <i class="fa fa-question"></i>
+                                            </span>
+                                            <br><br>
+                                            <div id="progress" class="progress">
+                                                <div class="progress-bar progress-bar-success"></div>
+                                            </div>
+                                            <div id="files" class="files"></div>
                                         </div>
                                     </div>
                                        
@@ -118,7 +136,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-12">
-                            {{ Form::button('Salvar', ['type' => 'submit', 'class' => 'btn blue salvarForm']) }}
+                            <a href="javascript:void(0)" class="btn blue salvarForm">Salvar</a>
                             <a href="{{ url('motos/index') }}"><button type="button" class="btn btn-default">Cancelar</button></a>
                         </div>
                     </div>

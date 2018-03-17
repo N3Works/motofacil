@@ -39,7 +39,6 @@ class MotosFormRequest extends FormRequest {
             'tipo_motor' => [],
             'refrigeracao' => [],
             'categoria' => [],
-            'anexo_id' => ['required'],
         ];
     }
 
@@ -49,12 +48,9 @@ class MotosFormRequest extends FormRequest {
      */
     public function messages() {
         return [
-
-
             'modelo.required' => 'O campo "Modelo" não foi preenchido.',
             'marca.required' => 'O campo "Marca" não foi preenchido.',
             'ano.required' => 'O campo "Ano" não foi preenchido.',
-            'anexo_id.required' => 'O campo "Anexo" não foi preenchido.',
         ];
     }
 

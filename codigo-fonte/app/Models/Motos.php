@@ -38,7 +38,14 @@ class Motos extends ModelControl {
         'categoria',
         'anexo_id',
         'data_ini',
-        'data_fim'
+        'data_fim',
+        
+        /*Anexos fillable*/
+        'filename',
+        'name',
+        'size',
+        'mime_type',
+        'nome_fantasia',
     ];
     
     /**
@@ -117,13 +124,13 @@ class Motos extends ModelControl {
             $builder->where('ano', $this->ano);
         }
         
-        if ($this->data_ini) {
-            $builder->where('ano', '>=', $this->data_ini);
-        }
-        
-        if ($this->data_fim) {
-            $builder->where('ano', '<=', $this->data_fim);
-        }
+//        if ($this->data_ini) {
+//            $builder->where('ano', '>=', $this->data_ini);
+//        }
+//        
+//        if ($this->data_fim) {
+//            $builder->where('ano', '<=', $this->data_fim);
+//        }
          
 
         $builder->orderBy('id', 'DESC');

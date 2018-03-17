@@ -144,3 +144,8 @@ footer {
 .alert-danger {
     background-color: #f2dede;
 }
+
+.select2-results__options li {
+    font-family: "Montserrat", sans-serif;
+    color: #121212;
+}

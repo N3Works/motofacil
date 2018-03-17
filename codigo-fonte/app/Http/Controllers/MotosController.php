@@ -11,6 +11,7 @@ use Response;
 
 //Modelo da controller
 use App\Models\Motos; 
+use App\Models\Anexos; 
 
 /**
  * Controlador Moto
@@ -101,6 +102,17 @@ class MotosController extends Controller {
      */
     public function save(MotosFormRequest $request) {
         $this->model->fill($request->all());
+        
+        $session = app('session.store');
+        
+        if ($session->has('anexos') && !empty($session->get('anexos'))) {
+            $anexos = new Anexos();
+            $data = $session->get('anexos');
+            $data['nome_fantasia'] = $this->model->modelo . '_' . $this->model->marca;
+            $data['descricao'] = $this->model->modelo . '_' . $this->model->marca;
+            $anexo_id = $anexos->insertGetId($data);
+            $this->model->anexo_id = $anexo_id;
+        }
         
         if (!empty($this->model->id)) {
             $alterar = $this->model->find($this->model->id);
