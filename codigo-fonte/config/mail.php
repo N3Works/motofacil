@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'thiago.amarante.farias@gmail.com',
-        'name' => 'Thiago Moto Fácil',
+        'address' => 'n3works.dev@gmail.com',
+        'name' => 'N3works - Desenvolvimento',
     ],
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'username' => 'thiago.amarante.farias@gmail.com',
+    'username' => 'n3works.dev@gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
     |
     */
 
-    'password' => 'secret007123',
+    'password' => 'devn3works',
 
     /*
     |--------------------------------------------------------------------------

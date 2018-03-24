@@ -16,7 +16,7 @@ use Response;
  * @author Thiago Farias <thiago.amarante.farias@gmail.com>
  */
 class WebPageController extends Controller {
-    
+
     /**
      * Página inicial da WebPage
      * @param Request $request dados do formulário
@@ -25,7 +25,7 @@ class WebPageController extends Controller {
     public function index(Request $request) {
         return view('webPage.index');
     }
-    
+
     /**
      * Página De busca das motos da WebPage
      * @param Request $request dados do formulário
@@ -36,13 +36,13 @@ class WebPageController extends Controller {
         $model->fill($request->all());
         $anos = [];
         $modelos = [];
-        
+
         if ($model->marca) {
             $marcaFiltro = Motos::where('marca', $model->marca);
             $modelos = $marcaFiltro->pluck('modelo', 'modelo');
             $anos = $marcaFiltro->pluck('ano', 'ano');
         }
-        
+
         return view('webPage.buscarMotos', [
             'model' => $model,
             'motos' => $model->consultar(),
@@ -51,7 +51,7 @@ class WebPageController extends Controller {
             'modelos' => $modelos,
         ]);
     }
-    
+
     /**
      * Página De busca das motos da WebPage
      * @param Request $request dados do formulário
@@ -60,18 +60,18 @@ class WebPageController extends Controller {
     public function quemSomos() {
         return view('webPage.quemSomos');
     }
-    
+
     /**
      * Tela de detalhe da moto
      * @param integer $id Indentificador da moto
      * @return Response
      */
     public function show($id) {
-        
+
         if (isset($id) && $id) {
             $model = new Motos();
             $moto = $model->find($id);
-           
+
             return view('webPage.show', [
                 'moto' => $moto,
             ]);
@@ -79,21 +79,21 @@ class WebPageController extends Controller {
             redirect(url('/index'));
         }
     }
-    
+
     /**
      * Página De busca das motos da WebPage
      * @param Request $request dados do formulário
      * @return Response
      */
     public function solicitarProposta(Request $request) {
-        
+
         $dados = $request->all();
         $proposta = null;
-        
-        
+
+
         if (isset($dados['proposta'])) {
             $proposta = $dados['proposta'];
-            
+
             if ($proposta == 'aposentados') {
                 $proposta = array();
                 $proposta['titulo'] = 'Empréstimo para aposentados em 72x';
@@ -105,30 +105,31 @@ class WebPageController extends Controller {
                 } else {
                     $proposta = array();
                     $proposta['titulo'] = $moto->modelo;
-                    $proposta['valor'] = $moto->id; 
+                    $proposta['valor'] = $moto->id;
                 }
             }
         }
-        
+
         return view('webPage.solicitarProposta', [
             'proposta' => $proposta,
         ]);
     }
-    
+
     /**
      * Página De busca das motos da WebPage
      * @param Request $request dados do formulário
      * @return Response
      */
     public function enviarProposta(SolicitacaoPropostaFormRequest $request) {
-        
+
         $dados = $request->all();
         $proposta = null;
-        
-        
+        $motoDetalhe = [];
+
+
         if (isset($dados['proposta'])) {
             $proposta = $dados['proposta'];
-            
+
             if ($proposta == 'aposentados') {
                 $proposta = array();
                 $proposta['titulo'] = 'Empréstimo para aposentados em 72x';
@@ -145,7 +146,7 @@ class WebPageController extends Controller {
                 }
             }
         }
-        
+
         if ($request->isMethod('post')) {
             $dados = $request->all();
             $subject = 'Solicitação de Proposta';
@@ -162,13 +163,13 @@ class WebPageController extends Controller {
                 $message->to($config['from']['address'], $config['from']['name']);
                 $message->subject($subject);
             });
-            
+
             $this->setMessage('Enviado com sucesso!', 'success');
         }
-        
+
         return redirect(url('solicitar'));
     }
-    
+
     /**
      * Busca os dados restantes para o filtro da moto
      * @param string $marca
@@ -177,7 +178,7 @@ class WebPageController extends Controller {
         $marcaFiltro = Motos::where('marca', $marca);
         $modelos = $marcaFiltro->pluck('modelo', 'modelo');
         $anos = $marcaFiltro->pluck('ano', 'ano');
-        
+
         return Response::json(array(
             'anos' => $anos,
             'modelos' => $modelos,

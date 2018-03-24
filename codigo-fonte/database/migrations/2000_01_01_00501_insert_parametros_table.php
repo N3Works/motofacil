@@ -6,25 +6,25 @@ class InsertParametrosTable extends Migration {
     public function up() {
         DB::table('parametros')->insert([
             [
-                'id' => '1', 
+                'id' => '1',
                 'nome' => 'CABECALHO_NOME_PROJETO',
                 'parametro_editavel' => 1,
                 'tipo' => 'text',
                 'descricao' => 'Nome do Projeto que mostra no cabeçalho',
                 'status' => 1,
-                'valor' => 'Projeto Base',
+                'valor' => 'Moto Fácil',
             ],
             [
-                'id' => '2', 
+                'id' => '2',
                 'nome' => 'RODAPE_TEXTO_PROJETO',
                 'parametro_editavel' => 1,
                 'tipo' => 'text',
                 'descricao' => 'Rodapé do Projeto',
                 'status' => 1,
-                'valor' => '&lt;Nome da Secretaria responsavel pelo Sistema&gt;-&lt;Sigla da Secretaria&gt;-&lt;Nome do Ministério&gt; | &lt;Endereco&gt;',
+                'valor' => 'Empréstimo consignado para aposentados em até 72x',
             ],
             [
-                'id' => '3', 
+                'id' => '3',
                 'nome' => 'CABECALHO_SUBTITULO',
                 'parametro_editavel' => 1,
                 'tipo' => 'text',
@@ -33,7 +33,7 @@ class InsertParametrosTable extends Migration {
                 'valor' => 'Subtitulo',
             ],
             [
-                'id' => '4', 
+                'id' => '4',
                 'nome' => 'LAYOUT_SISTEMA',
                 'parametro_editavel' => 1,
                 'tipo' => 'dropdown',
@@ -42,7 +42,7 @@ class InsertParametrosTable extends Migration {
                 'valor' => 'PADRAO',
             ],
             [
-                'id' => '5', 
+                'id' => '5',
                 'nome' => 'RESULTADOS_DATATABLE',
                 'parametro_editavel' => 1,
                 'tipo' => 'dropdown',
