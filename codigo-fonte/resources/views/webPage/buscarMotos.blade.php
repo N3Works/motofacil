@@ -11,9 +11,9 @@
                 <div class="col-lg-5 mx-auto">
                     <div class="portlet-body form form-text-open-sans" style="color: white;">
                         {{ Form::open(['id' => 'model_form', 'method' => 'post', 'url' => url('buscar'), 'class' => 'form-horizontal']) }}
-                        
+
                             <p>Informe primeiro a marca e depois o modelo e o ano na ordem que desejar.</p>
-                        
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group {{ $errors->first("marca", "has-error") }}">
@@ -61,8 +61,8 @@
 
                                 <div class="col-md-6">
                                     <div class="border-gallery">
-                                        
-                                    
+
+
                                         <div class="row">
                                             <div class="col-md-12" title="Modelo">
                                                 <h5 class="text-uppercase">{{ $moto->modelo }}</h5>
@@ -72,6 +72,9 @@
                                         <div class="row div-painel">
                                             <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
                                                 <img src="{{ asset('storage/'.str_replace('public', '', $moto->anexos->filename) ) }}" height="250" width="280" class="image-moto">
+                                                <p class = "watermark">
+                                                  Imagem ilustrativa<br>
+                                                </p>
                                             </div>
                                             <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
                                                 <div class="row">
@@ -92,7 +95,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6"><span style="font-size: 14px;">Potẽncia</span></div>
-                                                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6"><span style="font-size: 12px;">{{ $moto->potencia }} - CV</span></div> 
+                                                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6"><span style="font-size: 12px;">{{ $moto->potencia }} - CV</span></div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6"><span style="font-size: 14px;">Tanque</span></div>
@@ -118,7 +121,7 @@
                                                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6"><span style="font-size: 14px;">Categoria</span></div>
                                                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6"><span style="font-size: 12px;">{{ $moto->categoria }}</span></div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="row">

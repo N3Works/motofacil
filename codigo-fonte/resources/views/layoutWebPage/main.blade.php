@@ -15,8 +15,8 @@
 
         <!-- Footer -->
         <footer>
-            <div class="container text-center footerText">
-                <a class="blink" href="{{ url('solicitar?proposta=aposentados') }}">{!! app('AppConfig')->getParam('RODAPE_TEXTO_PROJETO') !!}</a>
+            <div class="container text-center footerText ">
+                <a class="blink middle-vertical-align" href="{{ url('solicitar?proposta=aposentados') }}">{!! app('AppConfig')->getParam('RODAPE_TEXTO_PROJETO') !!}</a>
             </div>
         </footer>
 
