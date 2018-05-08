@@ -13,9 +13,9 @@ class InsertUsersTable extends Migration {
         DB::table('users')->insert([
             [
                 'id' => 1,
-                'cpf' => '12345678901',
+                'cpf' => '00925779032',
                 'nome' => 'Administrador',
-                'email' => 'fake@fake.com',
+                'email' => 'flavio@fgprestadora',
                 'perfil_id' => 1,
                 'password' => '202cb962ac59075b964b07152d234b70',
                 'created_at' => $datetime,
@@ -23,7 +23,7 @@ class InsertUsersTable extends Migration {
             ],
             [
                 'id' => 2,
-                'cpf' => '24415378307',
+                'cpf' => '12345678901',
                 'nome' => 'Juca',
                 'email' => 'juca@juca.com',
                 'perfil_id' => 2,
