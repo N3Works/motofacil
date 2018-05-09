@@ -10,7 +10,7 @@
                     <h2>Solicitar Proposta</h2>
                 </div>
                 
-                <div class="col-md-12"> 
+                <div class="col-md-10"> 
                     <div class="container-branco form-text-open-sans">
 
 
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-lg-2 mx-auto">
                                 <div class="row text-center">
-                                    <div class="col-md-12">
+                                    <div class="col-md-10">
                                         {{ Form::button('Enviar', ['type' => 'submit', 'class' => 'btn btn-success enviarSolicitacao']) }}
                                     </div>
                                 </div>
