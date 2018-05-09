@@ -10,7 +10,7 @@
                     <h2>Solicitar Proposta</h2>
                 </div>
                 
-                <div class="col-md-10"> 
+                <div class="col-md-12"> 
                     <div class="row container-branco form-text-open-sans">
 
 
