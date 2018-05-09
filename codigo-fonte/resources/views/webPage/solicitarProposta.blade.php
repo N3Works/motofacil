@@ -52,7 +52,7 @@
 
                                 <hr>
                             </div>
-                                <div class="row text-center">
+                                <div class="row text-center" style=" display: flex; align-items: center; justify-content: center;>
                                     <div class="col-md-10">
                                         {{ Form::button('Enviar', ['type' => 'submit', 'class' => 'btn btn-success enviarSolicitacao']) }}
                                     </div>
