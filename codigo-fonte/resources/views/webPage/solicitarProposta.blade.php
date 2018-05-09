@@ -11,7 +11,7 @@
                 </div>
                 
                 <div class="col-md-10"> 
-                    <div class="container-branco form-text-open-sans">
+                    <div class="row container-branco form-text-open-sans">
 
 
                         <div class="col-lg-8 mx-auto">
@@ -52,13 +52,11 @@
 
                                 <hr>
                             </div>
-                            <div class="col-lg-2 mx-auto">
                                 <div class="row text-center">
                                     <div class="col-md-10">
                                         {{ Form::button('Enviar', ['type' => 'submit', 'class' => 'btn btn-success enviarSolicitacao']) }}
                                     </div>
                                 </div>
-                             </div>
                                 <hr>
                             {{ Form::close() }}
                         </div>
