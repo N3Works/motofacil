@@ -12,7 +12,7 @@ class InsertParametrosTable extends Migration {
                 'tipo' => 'text',
                 'descricao' => 'Nome do Projeto que mostra no cabeçalho',
                 'status' => 1,
-                'valor' => 'Moto Fácil',
+                'valor' => 'Moto + Fácil',
             ],
             [
                 'id' => '2',
