@@ -98,9 +98,9 @@ class WebPageController extends Controller {
                 $proposta = array();
                 $proposta['titulo'] = 'Empréstimo para aposentados em 72x';
                 $proposta['valor'] = 'aposentados';
-            } else if ($proposta == 'consignado') { 
+            } else if ($proposta == 'consignado') {
                 $proposta = array();
-                $proposta['titulo'] = 'Empréstimo pessoal consignado';
+                $proposta['titulo'] = 'Empréstimo pessoal';
                 $proposta['valor'] = 'consignado';
             } else {
                 $moto = Motos::find($dados['proposta']);
@@ -138,7 +138,7 @@ class WebPageController extends Controller {
                 $proposta = array();
                 $proposta['titulo'] = 'Empréstimo para aposentados em 72x';
                 $proposta['valor'] = 'aposentados';
-            } else if ($proposta == 'consignado') { 
+            } else if ($proposta == 'consignado') {
                 $proposta = array();
                 $proposta['titulo'] = 'Empréstimo pessoal consignado';
                 $proposta['valor'] = 'consignado';
