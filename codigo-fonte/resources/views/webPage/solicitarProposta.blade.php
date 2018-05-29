@@ -9,25 +9,25 @@
                 <div class="col-lg-8 mx-auto">
                     <h2>Solicitar Proposta</h2>
                 </div>
-                
-                <div class="col-md-12"> 
+
+                <div class="col-md-12">
                     <div class="row container-branco form-text-open-sans">
 
 
                         <div class="col-lg-8 mx-auto">
-                            
+
                             @include('layout.erros')
-                            
+
                             <div class="portlet-body form text-center">
                                 {{ Form::open(['id' => 'solicitar_proposta', 'method' => 'post', 'url' => url('enviar'), 'class' => 'form-horizontal']) }}
-                                    
+
                                     <input type="hidden" value="{{ $proposta ? $proposta['valor'] : '' }}" name="proposta" />
-                                    
+
                                     @if ($proposta)
                                     <p> Proposta: {{ $proposta['titulo'] }}</p>
                                     @endif
-                                    
-                                
+
+
                                     <div class="form-group {{ $errors->first("nome", "has-error") }}">
                                         <label class="control-label">Nome <span class="request">*</span></label>
                                         {{ Form::text('nome', '', ['data-required' => 1,'aria-required' => 'true' ,'class' => 'form-control  ', 'placeholder' => 'Seu nome aqui']) }}
@@ -37,7 +37,7 @@
                                         <label class="control-label">E-mail</label>
                                         {{ Form::text('email', '', ['data-required' => 1,'aria-required' => 'true' ,'class' => 'form-control  ', 'placeholder' => 'Seu e-mail aqui']) }}
                                     </div>
-                                        
+
                                     <div class="form-group {{ $errors->first("telefone", "has-error") }}">
                                         <label class="control-label">Fone ou Celular <span class="request">*</span></label>
                                         {{ Form::text('telefone', '', ['data-required' => 1,'aria-required' => 'true' ,'class' => 'form-control', 'placeholder' => 'DDD + Fone']) }}
@@ -53,7 +53,9 @@
                                 <hr>
                             </div>
                                 <div class="row text-center" style=" display: flex; align-items: center; justify-content: center;">
-                                    <div class="col-md-10">
+
+                                    <div class="col-md-12">
+                                      <p> Entre em contato conosco <br> 0800 - ### - #### </p>
                                         {{ Form::button('Enviar', ['type' => 'submit', 'class' => 'btn btn-success enviarSolicitacao']) }}
                                     </div>
                                 </div>
