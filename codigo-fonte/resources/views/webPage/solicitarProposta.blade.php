@@ -55,7 +55,7 @@
                                 <div class="row text-center" style=" display: flex; align-items: center; justify-content: center;">
 
                                     <div class="col-md-12">
-                                      <p> Entre em contato conosco <br> 0800 - 500 - 2025 </p>
+                                      <p> Entre em contato conosco <br> 0800 - 500 - 2021 </p>
                                         {{ Form::button('Enviar', ['type' => 'submit', 'class' => 'btn btn-success enviarSolicitacao']) }}
                                     </div>
                                 </div>
