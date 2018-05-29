@@ -42,7 +42,7 @@ n3works-mf-www:
   links:
     - n3works-mf-db:db
   ports:
-    - "86:80"
+    - "80:80"
 #crud:
 # container_name: laravel-crud
 # image: jointecnologia/laravel-crud
