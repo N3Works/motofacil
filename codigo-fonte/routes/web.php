@@ -27,6 +27,7 @@ Route::get('/manual', function () {
 Route::any('/solicitar', 'WebPageController@solicitarProposta');
 Route::any('/enviar', 'WebPageController@enviarProposta');
 Route::any('/index', 'WebPageController@index');
+Route::any('/', 'WebPageController@index');
 Route::any('/show/{id}', 'WebPageController@show');
 Route::any('/buscar', 'WebPageController@buscarMotos');
 Route::any('/quemSomos', 'WebPageController@quemSomos');
