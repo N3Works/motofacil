@@ -24,7 +24,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group {{ $errors->first("modelo", "has-error") }}">
-                                        {{ Form::select('modelo', $modelos, $model->modelo, ['data-required' => 1,'aria-required' => 'true' ,'class' => 'form-control select2 modelos-select', 'placeholder' => 'Digite ou selecione o Modelo']) }}
+                                        {{ Form::select('modelo', $modelos, $model->modelo, ['data-required' => 1,'aria-required' => 'true' ,'class' => 'form-control select2 modelos-select', 'placeholder' => 'Digite ou selecione o Modelo', 'disabled' => 'disabled']) }}
                                     </div>
                                 </div>
                             </div>
