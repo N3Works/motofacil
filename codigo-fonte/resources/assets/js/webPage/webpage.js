@@ -22,12 +22,6 @@ function limparCampos(id) {
 function selecionaMarca() {
     var marca = $(this).val();
     
-    if (marca) {
-        $('.modelos-select').removeAttr('disabled');
-    } else {
-        $('.modelos-select').attr('disabled', 'disabled');
-        $('.modelos-select').val('').select2();
-    }
     
     $.ajax({
         url: 'webPage/buscarModeloEAno/'+marca

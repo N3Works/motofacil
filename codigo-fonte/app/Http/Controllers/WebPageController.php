@@ -36,11 +36,14 @@ class WebPageController extends Controller {
         $model->fill($request->all());
         $anos = [];
         $modelos = [];
+        
 
         if ($model->marca) {
             $marcaFiltro = Motos::where('marca', $model->marca);
             $modelos = $marcaFiltro->pluck('modelo', 'modelo');
             $anos = $marcaFiltro->pluck('ano', 'ano');
+        } else {
+            $modelos = Motos::pluck('modelo', 'modelo');
         }
 
         return view('webPage.buscarMotos', [
