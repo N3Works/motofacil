@@ -168,8 +168,14 @@ class WebPageController extends Controller {
             if ($motoDetalhe) {
                 $dados['motoDetalhe'] = $motoDetalhe;
             }
-            Mail::send('webPage.mail.proposta' , $dados, function ($message) use ($subject) {
+              Mail::send('webPage.mail.proposta' , $dados, function ($message) use ($subject, $proposta) {
+              if ($proposta == 'consignado') {
+                $config = config('mailEmprestimoPessoal'); // get config de email
+              } else if ($proposta == 'aposentados'){
+                $config = config('mailEmprestimoAposentados'); // get config de email
+              } else {
                 $config = config('mail'); // get config de email
+              }
                 $message->from($config['from']['address'], $config['from']['name']);
                 $message->to($config['from']['address'], $config['from']['name']);
                 $message->subject($subject);
