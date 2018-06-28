@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.gmail.com',
+    'host' => 'email-ssl.com.br',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => 587,
+    'port' => 465,
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'n3works.dev@gmail.com',
-        'name' => 'N3works - Desenvolvimento',
+        'address' => 'motomaisfacil@aquifinanciamentos.com.br',
+        'name' => 'Moto mais fácil - Contato via Site',
     ],
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'username' => 'n3works.dev@gmail.com',
+    'username' => 'motomaisfacil@aquifinanciamentos.com.br',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
     |
     */
 
-    'password' => '969602n3works',
+    'password' => 'motomaisfacil21',
 
     /*
     |--------------------------------------------------------------------------
