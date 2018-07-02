@@ -160,7 +160,7 @@ class WebPageController extends Controller {
 
         if ($request->isMethod('post')) {
             $dados = $request->all();
-            
+            $subject = 'Solicitação de Proposta de Financiamento';
             $dados['tipo_proposta'] = $proposta['titulo'];
             if (!isset($dados['email'])) {
                 $dados['email'] = '';
