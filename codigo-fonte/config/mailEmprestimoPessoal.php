@@ -63,6 +63,7 @@ return [
     
       'to' => [
         'address' => 'creditopessoal@fgprestadora.com',
+        'name' => 'Equipe Crédito Pessoal',
     ],
 
     /*
