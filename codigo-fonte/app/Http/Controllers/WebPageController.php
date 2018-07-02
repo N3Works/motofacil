@@ -177,7 +177,7 @@ class WebPageController extends Controller {
                 $config = config('mail'); // get config de email
               }
                 $message->from($config['from']['address'], $config['from']['name']);
-                $message->to($config['from']['address'], $config['from']['name']);
+                $message->to($config['to']['address'], $config['from']['name']);
                 $message->subject($subject);
             });
 
