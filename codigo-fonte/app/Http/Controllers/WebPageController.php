@@ -160,7 +160,7 @@ class WebPageController extends Controller {
 
         if ($request->isMethod('post')) {
             $dados = $request->all();
-            $subject = 'Solicitação de Proposta';
+            
             $dados['tipo_proposta'] = $proposta['titulo'];
             if (!isset($dados['email'])) {
                 $dados['email'] = '';
@@ -170,14 +170,17 @@ class WebPageController extends Controller {
             }
               Mail::send('webPage.mail.proposta' , $dados, function ($message) use ($subject, $proposta) {
               if ($proposta == 'consignado') {
+                $subject = 'Solicitação de Crédito Pessoal';
                 $config = config('mailEmprestimoPessoal'); // get config de email
               } else if ($proposta == 'aposentados'){
+                $subject = 'Solicitação de Crédito Consignado';
                 $config = config('mailEmprestimoAposentados'); // get config de email
               } else {
+                $subject = 'Solicitação de Proposta de Financiamento';
                 $config = config('mail'); // get config de email
               }
                 $message->from($config['from']['address'], $config['from']['name']);
-                $message->to($config['to']['address'], $config['from']['name']);
+                $message->to($config['to']['address'], $config['to']['name']);
                 $message->subject($subject);
             });
 
