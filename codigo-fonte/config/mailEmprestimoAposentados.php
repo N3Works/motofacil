@@ -54,6 +54,7 @@ return [
     
       'to' => [
         'address' => 'consignado@fgprestadora.com',
+        'name' => 'Equipe Crédito Consignado',
     ],
     /*
     |--------------------------------------------------------------------------
