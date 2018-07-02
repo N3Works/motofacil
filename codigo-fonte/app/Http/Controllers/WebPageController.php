@@ -169,10 +169,10 @@ class WebPageController extends Controller {
                 $dados['motoDetalhe'] = $motoDetalhe;
             }
               Mail::send('webPage.mail.proposta' , $dados, function ($message) use ($subject, $proposta) {
-              if ($proposta == 'consignado') {
+              if ($proposta['valor'] == 'consignado') {
                 $subject = 'Solicitação de Crédito Pessoal';
                 $config = config('mailEmprestimoPessoal'); // get config de email
-              } else if ($proposta == 'aposentados'){
+              } else if ($proposta['valor'] == 'aposentados'){
                 $subject = 'Solicitação de Crédito Consignado';
                 $config = config('mailEmprestimoAposentados'); // get config de email
               } else {
