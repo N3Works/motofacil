@@ -59,6 +59,11 @@ return [
         'address' => 'motomaisfacil@aquifinanciamentos.com.br',
         'name' => 'Moto mais fácil - Contato via Site',
     ],
+    
+    
+      'to' => [
+        'address' => 'motomaisfacil@fgprestadora.com',
+    ],
 
     /*
     |--------------------------------------------------------------------------
