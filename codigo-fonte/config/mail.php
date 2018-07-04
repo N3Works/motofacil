@@ -62,7 +62,7 @@ return [
     
     
       'to' => [
-        'address' => 'motomaisfacil@fgprestadora.com',
+        'destinatiario' => 'motomaisfacil@fgprestadora.com',
         'name' => 'Equipe Financiamento Motos',
     ],
 

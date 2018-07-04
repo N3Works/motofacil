@@ -50,10 +50,10 @@ return [
         'address' => 'motomaisfacil@aquifinanciamentos.com.br',
         'name' => 'Moto mais fácil - Contato via Site',
     ],
-    
-    
+
+
       'to' => [
-        'address' => 'consignado@fgprestadora.com',
+        'destinatiario' => 'consignado@fgprestadora.com',
         'name' => 'Equipe Crédito Consignado',
     ],
     /*

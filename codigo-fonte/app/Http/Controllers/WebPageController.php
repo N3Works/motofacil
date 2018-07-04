@@ -36,7 +36,7 @@ class WebPageController extends Controller {
         $model->fill($request->all());
         $anos = [];
         $modelos = [];
-        
+
 
         if ($model->marca) {
             $marcaFiltro = Motos::where('marca', $model->marca);
@@ -179,8 +179,9 @@ class WebPageController extends Controller {
                 $subject = 'Solicitação de Proposta de Financiamento';
                 $config = config('mail'); // get config de email
               }
+                //dd($config);
                 $message->from($config['from']['address'], $config['from']['name']);
-                $message->to($config['to']['address'], $config['to']['name']);
+                $message->to($config['to']['destinatiario'], $config['to']['name']);
                 $message->subject($subject);
             });
 
