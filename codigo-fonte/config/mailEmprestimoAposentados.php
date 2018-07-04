@@ -88,7 +88,7 @@ return [
     | connection so that the application will be able to send messages.
     |
     */
-    'password' => '#trocarsenha1',
+    'password' => 'motomaisfacil21',
     /*
     |--------------------------------------------------------------------------
     | Sendmail System Path
